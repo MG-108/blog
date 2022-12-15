@@ -9,6 +9,15 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Montserrat", sans-serif;
+
+  color: #000;
+  background: #ffedd5;
+
+  [data-theme="dark"],
+  [data-theme="dark"] body {
+    color: #fff;
+    background: #000;
+  }
 }
 
 .text-shadow {

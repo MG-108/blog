@@ -1,56 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStateContext } from "../context/contextProvider";
-import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
-import { useTheme } from "next-themes";
 
 const Theme = () => {
-  const { currentMode, setMode } = useStateContext();
+  const { theme, setMode, resolvedTheme } = useStateContext();
 
-  const { theme, setTheme } = useTheme();
   return (
     <div>
-      {theme === "dark" ? (
-        <button onClick={() => setTheme("light")}>
-          <MdOutlineLightMode size={30} className="cursor-pointer" />
-        </button>
-      ) : (
-        <button onClick={() => setTheme("dark")}>
-          <MdDarkMode size={30} className="cursor-pointer" />
-        </button>
-      )}
+      <select
+        value={theme}
+        onChange={setMode}
+        className="bg-gray-300 rounded-2xl no-underline cursor-pointer font-medium text-orange-500 p-1"
+        style={{ backgroundColor: resolvedTheme === "dark" ? "#18181b" : "#ffedd5" }}
+      >
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
     </div>
-
-    // <div className="flex flex-col">
-    //   {currentMode === "Dark" ? (
-    //     <div>
-    //       <label htmlFor="light">
-    //         <MdOutlineLightMode size={30} className="cursor-pointer" />
-    //       </label>
-    //       <input
-    //         type="button"
-    //         id="light"
-    //         name="theme"
-    //         className="text-orange-500 text-xs"
-    //         value="Light"
-    //         onClick={setMode}
-    //       />
-    //     </div>
-    //   ) : (
-    //     <div>
-    //       <label htmlFor="dark">
-    //         <MdDarkMode size={30} className="cursor-pointer" />
-    //       </label>
-    //       <input
-    //         type="button"
-    //         id="dark"
-    //         name="theme"
-    //         className="text-orange-500 text-xs"
-    //         value="Dark"
-    //         onClick={setMode}
-    //       />
-    //     </div>
-    //   )}
-    // </div>
   );
 };
 
