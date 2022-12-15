@@ -1,13 +1,14 @@
 import React from "react";
 import moment from "moment";
 import Link from "next/link";
+import Theme from "./Theme";
 
 import { grpahCMSImageLoader } from "../util";
 import Image from "next/image";
 
 const PostCard = ({ post }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
+    <div className="bg-white dark:bg-secondary-dark-bg shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md pb-80 mb-6">
         <Image
           unoptimized
@@ -20,7 +21,7 @@ const PostCard = ({ post }) => {
       </div>
       <h1
         className="transition duration-700 text-center mb-8 cursor-pointer
-          hover:text-pink-600 text-3xl font-semibold"
+          hover:text-orange-500 text-3xl font-semibold"
       >
         <Link href={`/post/${post.slug}`}>{post.title}</Link>
       </h1>
@@ -43,7 +44,7 @@ const PostCard = ({ post }) => {
         <div className="font-medium text-gray-700">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 inline mr-2 text-pink-500"
+            className="h-6 w-6 inline mr-2 text-orange-500"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -65,7 +66,7 @@ const PostCard = ({ post }) => {
         <Link href={`/post/${post.slug}`}>
           <span
             className="transition duration-500 transform hover:-translate-y-1
-            inline-block bg-pink-600 text-lg font-medium rounded-full text-white
+            inline-block bg-orange-500 text-lg font-medium rounded-full text-white
             px-8 py-3 cursor-pointer"
           >
             Continue Reading

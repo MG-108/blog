@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import Link from "next/link";
 
 import { getCategories } from "../services";
+import Theme from "./Theme";
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -11,14 +12,17 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-10 mb-8">
-      <div className="border-b w-full inline-block border-blue-400 py-8">
+    <div className=" bg-orange-500 rounded-b-xl container mx-auto px-10 mb-8 ">
+      <div className=" w-full inline-block py-2 pt-3 md:py-7">
         <div className="md:float-left block">
           <Link href="/">
-            <span className="cursor-pointer font-bold text-4xl text-white dark:text-black">
+            <span className="cursor-pointer font-bold text-4xl text-white ">
               Cripto Area
             </span>
           </Link>
+        </div>
+        <div className="float-right block cursor-pointer mx-6">
+          <Theme />
         </div>
 
         <div className="hidden md:float-left md:contents">
