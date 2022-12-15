@@ -12,7 +12,7 @@ class MyDocument extends Document {
         <Head>
           {/* <meta name="viewport" content="width=device-width,minimum-scale=1, initial-scale=1" /> */}
         </Head>
-        <body>
+        <body className=" dark:bg-zinc-900">
           <Main />
           <NextScript />
         </body>

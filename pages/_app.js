@@ -3,14 +3,17 @@ import { Layout } from "../components";
 import "tailwindcss/tailwind.css";
 import "../styles/globals.scss";
 import { ContextProvider } from "../context/contextProvider";
+import { ThemeProvider } from "next-themes";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ContextProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ContextProvider>
+    <ThemeProvider attribute="class">
+      <ContextProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ContextProvider>
+    </ThemeProvider>
   );
 }
 

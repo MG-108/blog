@@ -13,7 +13,7 @@ const PostCard = ({ post }) => {
         <Image
           unoptimized
           loader={grpahCMSImageLoader}
-          layout="fill"
+          fill
           src={post.featuredImage.url}
           alt={post.title}
           className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg  lg:rounded-lg"
@@ -36,12 +36,12 @@ const PostCard = ({ post }) => {
             className="align-middle rounded-full"
             src={post.author.photo.url}
           />
-          <p className="inline align-middle text-gray-700 ml-2 text-lg">
+          <p className="inline align-middle text-gray-700 dark:text-white ml-2 text-lg">
             {post.author.name}
           </p>
         </div>
 
-        <div className="font-medium text-gray-700">
+        <div className="font-medium text-gray-700 dark:text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 inline mr-2 text-orange-500"
@@ -59,7 +59,7 @@ const PostCard = ({ post }) => {
           <span>{moment(post.createdAt).format("DD/MMM/YYYY")}</span>
         </div>
       </div>
-      <p className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8">
+      <p className="text-center text-lg text-gray-700 dark:text-white font-normal px-4 lg:px-20 mb-8">
         {post.excerpt}
       </p>
       <div className="text-center">
