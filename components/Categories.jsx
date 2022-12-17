@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 import { getCategories } from "../services";
+import { useStateContext } from "../context/contextProvider";
 
 const Categories = () => {
-  const [categories, setCategories] = useState([]);
+  const { setCategories, categories } = useStateContext();
 
   useEffect(() => {
     getCategories().then((newCategories) => setCategories(newCategories));
@@ -20,7 +21,7 @@ const Categories = () => {
           <span
             className={`cursor-pointer block ${
               index === categories.length - 1 ? "border-b-0" : "border-b"
-            } pb-3 mb-3 dark:text-white`}
+            } pb-3 mb-3 text-orange-500`}
           >
             {category.name}
           </span>

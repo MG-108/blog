@@ -1,13 +1,12 @@
 import React from "react";
-import { Header } from "./";
+import { Header, Footer } from "./";
 
 const Layout = ({ children }) => {
   return (
     <div>
       <Header />
       {children}
-
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

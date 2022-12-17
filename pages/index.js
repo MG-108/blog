@@ -6,6 +6,7 @@ import { getPosts } from "../services";
 import { FeaturedPosts } from "../sections";
 
 import { useStateContext } from "../context/contextProvider";
+import Script from "next/script";
 
 export default function Home({ posts }) {
   const { theme, setTheme } = useStateContext();

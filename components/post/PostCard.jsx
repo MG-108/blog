@@ -1,10 +1,8 @@
 import React from "react";
-import moment from "moment";
 import Link from "next/link";
-import Theme from "./Theme";
-
-import { grpahCMSImageLoader } from "../util";
 import Image from "next/image";
+import moment from "moment";
+import { grpahCMSImageLoader } from "../../util";
 
 const PostCard = ({ post }) => {
   return (

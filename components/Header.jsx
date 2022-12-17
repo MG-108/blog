@@ -1,40 +1,41 @@
-import React, { useContext, useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-
-import { getCategories } from "../services";
-import Theme from "./Theme";
+import { useStateContext } from "../context/contextProvider";
+import { NavLinks, NavMenuSm, Theme } from "./";
+import { GrClose } from "react-icons/gr";
+import { BiMenu } from "react-icons/bi";
 
 const Header = () => {
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    getCategories().then((newCategories) => setCategories(newCategories));
-  }, []);
+  const { open, setOpen } = useStateContext();
 
   return (
-    <div className=" bg-orange-500 rounded-b-xl container mx-auto px-10 mb-8 shadow-lg">
-      <div className=" w-full inline-block py-2 pt-3 md:py-7">
-        <div className="md:float-left block">
-          <Link href="/">
-            <span className="cursor-pointer font-bold text-4xl text-white ">
-              Cripto Area
-            </span>
-          </Link>
-        </div>
-        <div className="float-right block cursor-pointer mx-6">
-          <Theme />
-        </div>
-
-        <div className="hidden md:float-left md:contents">
-          {categories.map((category) => (
-            <Link key={category.slug} href={`/category/${category.slug}`}>
-              <span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">
-                {category.name}
+    <div className="mb-8 ">
+      <div className=" bg-orange-500 shadow-lg w-full  mx-auto   px-10 lg:px-16 ">
+        <div className="flex items-center justify-between py-5 md:py-7 ">
+          <div className="md:hidden">
+            <button
+              onClick={() => setOpen(!open)}
+              className="text-3xl cursor-pointer md:hidden"
+            >
+              <span>{open ? <GrClose size={30} /> : <BiMenu size={30} />}</span>
+            </button>
+          </div>
+          <div>
+            <Link href="/">
+              <span className="cursor-pointer font-bold md:text-4xl text-2xl dark:text-white dark:hover:text-black duration-250 hover:text-white duration-250 ">
+                Cripto Area
               </span>
             </Link>
-          ))}
+          </div>
+          <NavLinks />
+          <div>
+            <div className="cursor-pointer ">
+              <Theme />
+            </div>
+          </div>
         </div>
       </div>
+      <div className="md:hidden">{open ? <NavMenuSm /> : null}</div>
     </div>
   );
 };
