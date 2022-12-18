@@ -9,7 +9,7 @@ import { useStateContext } from "../context/contextProvider";
 import Script from "next/script";
 
 export default function Home({ posts }) {
-  const { theme, setTheme } = useStateContext();
+  const { setTheme } = useStateContext();
 
   useEffect(() => {
     const currentThemeMode = localStorage.getItem("themeMode");
@@ -34,7 +34,7 @@ export default function Home({ posts }) {
             <PostCard post={post.node} key={index} />
           ))}
         </div>
-        <div className="lg:col-span-4 col-span-1  ">
+        <div className="lg:col-span-4 col-span-1 lg:pb-6  ">
           <div className="lg:sticky relative top-8">
             <PostWidget />
             <Categories />

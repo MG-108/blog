@@ -15,7 +15,7 @@ const NavMenuSm = () => {
   }, []);
 
   return (
-    <div className="w-2/3 h-48 bg-orange-500 shadow-2xl rounded-b-lg ">
+    <div className="w-2/3 h-48 bg-orange-500 shadow-2xl rounded-b-lg">
       <div className="flex flex-col ml-6">
         <div className="flex flex-col">
           {navLinks.map((link) => (
