@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <div className="mb-8 ">
-      <div className=" bg-orange-500 shadow-lg w-full  mx-auto px-4 md:px-8 lg:px-16  ">
+      <div className=" bg-orange-500 shadow-lg  w-full  px-4 md:px-8 lg:px-16  ">
         <div className="flex items-center justify-between py-5 md:py-7 ">
           <div className="md:hidden">
             <button

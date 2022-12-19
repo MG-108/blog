@@ -4,7 +4,7 @@ import { MdOutlineCopyright } from "react-icons/md";
 
 const Footer = () => {
   const footerLinks = [
-    { name: "Política de Privacidade", link: "/politica-de-privacidade" },
+    { name: "Privacidade", link: "/politica-de-privacidade" },
     { name: "Termos de Uso", link: "/termos-de-uso" },
     { name: "Contato", link: "/contato" },
     { name: "Sobre", link: "/sobre" },
