@@ -1,9 +1,11 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useStateContext } from "../context/contextProvider";
 import { NavLinks, NavMenuSm, Theme } from "./";
 import { GrClose } from "react-icons/gr";
 import { BiMenu } from "react-icons/bi";
+import logo from "../public/Logo.svg";
 
 const Header = () => {
   const { open, setOpen } = useStateContext();
@@ -22,9 +24,18 @@ const Header = () => {
           </div>
           <div>
             <Link href="/">
-              <span className="cursor-pointer font-bold md:text-4xl text-2xl text-white hover:text-black duration-250 ">
-                Cripto Area
-              </span>
+              <div className="flex items-center">
+                <span>
+                  <Image
+                    src={logo}
+                    alt="logo do cripto area"
+                    className="rounded-full w-16 h-16"
+                  />
+                </span>
+                <span className=" pl-2 cursor-pointer font-bold text-2xl md:text-4xl text-white hover:text-black transition duration-500 ease">
+                  Cripto Area
+                </span>
+              </div>
             </Link>
           </div>
           <NavLinks />

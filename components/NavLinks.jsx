@@ -21,7 +21,7 @@ const NavLinks = () => {
           <div key={link.name}>
             <Link
               href={link.link}
-              className=" px-1 lg:px-3  text-lg font-semibold  text-white hover:text-black duration-250"
+              className=" px-1 lg:px-3  text-lg font-semibold  text-white hover:text-black  transition duration-500 ease"
             >
               {link.name}
             </Link>
@@ -30,7 +30,7 @@ const NavLinks = () => {
       </div>
       {categories.map((category, index) => (
         <Link key={category.slug} href={`/category/${category.slug}`}>
-          <span className=" px-1 lg:px-3 text-lg font-semibold text-white hover:text-black duration-250">
+          <span className=" px-1 lg:px-3 text-lg font-semibold text-white hover:text-black  transition duration-500 ease">
             {category.name}
           </span>
         </Link>

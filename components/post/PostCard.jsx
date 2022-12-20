@@ -67,7 +67,7 @@ const PostCard = ({ post }) => {
             inline-block bg-orange-500 text-lg font-medium rounded-full text-white
             px-8 py-3 cursor-pointer"
           >
-            Continue Reading
+            Continue Lendo
           </span>
         </Link>
       </div>
