@@ -9,7 +9,7 @@ const Theme = () => {
       <select
         value={theme}
         onChange={setMode}
-        className={`rounded-2xl no-underline cursor-pointer font-medium text-orange-500 p-1`}
+        className={`md:rounded-2xl no-underline cursor-pointer font-medium text-orange-500 p-1`}
       >
         <option value="light">Light</option>
         <option value="dark">Dark</option>

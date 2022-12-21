@@ -15,7 +15,7 @@ const NavLinks = () => {
   }, []);
 
   return (
-    <div className="hidden md:block lg:flex ">
+    <div className="hidden md:block lg:flex  font-mono ">
       <div className="md:flex ">
         {navLinks.map((link) => (
           <div key={link.name}>
