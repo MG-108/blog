@@ -4,10 +4,7 @@ import { useStateContext } from "../context/contextProvider";
 import { getCategories } from "../services";
 
 const NavMenuSm = () => {
-  const navLinks = [
-    { name: "Home", link: "/" },
-    { name: "Sobre", link: "/sobre" },
-  ];
+  const navLinks = [{ name: "Sobre", link: "/sobre" }];
 
   const { setCategories, categories } = useStateContext();
   useEffect(() => {

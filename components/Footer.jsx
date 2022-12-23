@@ -6,15 +6,15 @@ import logo from "../public/Logo.svg";
 
 const Footer = () => {
   const footerLinks = [
-    { name: "Privacidade", link: "/politica-de-privacidade" },
+    { name: "Política de Privacidade", link: "/politica-de-privacidade" },
     { name: "Termos de Uso", link: "/termos-de-uso" },
     { name: "Contato", link: "/contato" },
     { name: "Sobre", link: "/sobre" },
   ];
   return (
-    <div className=" flex flex-col bg-orange-500 w-full mt-8 py-12 lg:py-10 ">
-      <div className="flex justify-evenly items-center ">
-        <div className="mx-6">
+    <div className=" flex flex-col  bg-orange-500 w-full mt-8 py-12 lg:py-10 ">
+      <div className="flex flex-col md:flex-row md:justify-evenly items-center ">
+        <div className="mx-6 mb-6 md:mb-0">
           <Link href="/">
             <div className="flex items-center">
               <span>

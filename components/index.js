@@ -13,3 +13,4 @@ export { default as Theme } from "./Theme";
 export { default as NavMenuSm } from "./NavMenuSm";
 export { default as Footer } from "./Footer";
 export { default as NavLinks } from "./NavLinks";
+export { default as Pagination } from "./Pagination";

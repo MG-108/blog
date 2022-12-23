@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
             Esta política de privacidade descreve como o{" "}
             <b className=" text-orange-500">Cripto Area</b> coleta, usa e compartilha
             informações sobre você quando você visita ou usa o{" "}
-            <b className=" text-orange-500">Cripto Area</b> .
+            <b className=" text-orange-500">Cripto Area</b>.
           </p>
           <p className="mb-2">
             Ao usar o Site, você concorda com a coleta, o uso e o compartilhamento de
@@ -65,13 +65,13 @@ const PrivacyPolicy = () => {
           </p>
           <p className="mb-2">
             <b>Para comunicar com você:</b> Podemos usar as informações que coletamos
-            para se comunicar com você sobre o seu uso do Site e para enviar
-            atualizações, newsletters e outras informações.
+            para nos comunicarmos com você sobre o seu uso do Site e para enviar
+            atualizações e outras informações.
           </p>
           <p className="mb-2">
             <b>Para cumprir obrigações legais:</b> Podemos usar as informações que
-            coletam os para cumprir obrigações legais, como responder a um subpoena
-            ou ordem judicial.
+            coletamos para cumprir obrigações legais, como responder a uma ordem
+            judicial.
           </p>
         </div>
 
@@ -93,11 +93,6 @@ const PrivacyPolicy = () => {
             coletamos se exigido por lei ou em resposta a um subpoena ou ordem
             judicial.
           </p>
-          <p className="mb-2">
-            <b>Em conexão com uma venda ou fusão:</b> Se vendemos ou fundimos com
-            outra empresa, podemos compartilhar as informações que coletamos com o
-            novo proprietário.
-          </p>
         </div>
 
         <h2 className="my-4 text-center lg:text-left text-orange-500 font-bold">
@@ -106,8 +101,7 @@ const PrivacyPolicy = () => {
         <p className="mb-2">
           Tomamos medidas razoáveis para proteger as informações que coletamos de
           perda, má utilização e acesso não autorizado, divulgação, alteração e
-          destruição. No entanto, nenhuma medida de segurança é perfeita e não
-          podemos garantir a segurança de suas informações.
+          destruição.
         </p>
 
         <h2 className="my-4 text-center lg:text-left text-orange-500 font-bold">
@@ -116,8 +110,8 @@ const PrivacyPolicy = () => {
         <p className="mb-2">
           Podemos atualizar esta Política de tempos em tempos. Publicaremos quaisquer
           alterações nesta página e incentivamos você a revisar a Política
-          periodicamente. O seu uso continuado do Site após fazermos alterações
-          indica sua aceitação da Política revisada.
+          periodicamente. O uso contínuo do site após quaisquer alterações feitas
+          será visto como sua aceitação dos termos revisados.
         </p>
 
         <h2 className="my-4 text-center lg:text-left text-orange-500 font-bold">

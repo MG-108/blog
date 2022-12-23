@@ -19,8 +19,8 @@ const About = () => {
           </p>
           <p className="mb-2">
             Nos últimos anos, a popularidade de criptomoedas como Bitcoin e Ethereum
-            explodiu, à medida que cada vez mais pessoas começaram a ver o potencial
-            desta nova forma de dinheiro digital.
+            explodiu, à medida que mais pessoas começaram a ver o potencial desta
+            nova forma de dinheiro digital.
           </p>
         </div>
 
