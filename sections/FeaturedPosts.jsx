@@ -27,6 +27,7 @@ const responsive = {
 const FeaturedPosts = () => {
   const [featuredPosts, setFeaturedPosts] = useState([]);
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [carouselState, setCarouselState] = useState({});
 
   useEffect(() => {
     getFeaturedPosts().then((result) => {
@@ -74,13 +75,14 @@ const FeaturedPosts = () => {
   );
 
   return (
-    <div className="mb-8 ">
+    <div className="mb-8">
       <Carousel
         infinite
         customLeftArrow={customLeftArrow}
         customRightArrow={customRightArrow}
         responsive={responsive}
         itemClass="px-4"
+        onStateChange={(state) => setCarouselState(state)}
       >
         {dataLoaded &&
           featuredPosts.map((post, index) => (

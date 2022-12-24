@@ -14,7 +14,7 @@ import { Box, Stack, Typography } from "@mui/material";
 export default function Home({ posts }) {
   const { setTheme } = useStateContext();
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 2;
+  const postsPerPage = 10;
 
   useEffect(() => {
     const currentThemeMode = localStorage.getItem("themeMode");
@@ -69,7 +69,7 @@ export default function Home({ posts }) {
       </div>
 
       <Stack mt="24px" alignItems="center">
-        {posts.length > 2 ? (
+        {posts.length > 10 ? (
           <Pagination
             defaultPage={1}
             count={Math.ceil(posts.length / postsPerPage)}

@@ -242,6 +242,7 @@ export const getRecentPosts = async () => {
       posts(
         orderBy: createdAt_ASC
         last: 3
+        skip:3
       ) {
         title
         featuredImage {
