@@ -29,10 +29,10 @@ const Header = () => {
                   <Image
                     src={logo}
                     alt="logo do cripto area"
-                    className="rounded-full w-16 h-16"
+                    className="rounded-full w-12 h-12 md:w-16 md:h-16"
                   />
                 </span>
-                <span className=" pl-2 cursor-pointer font-bold font-mono text-2xl md:text-4xl text-white hover:text-black transition duration-500 ease">
+                <span className=" pl-2 cursor-pointer font-bold font-mono text-xl md:text-4xl text-white hover:text-black transition duration-500 ease">
                   Cripto Area
                 </span>
               </div>
