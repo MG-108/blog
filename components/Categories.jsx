@@ -17,7 +17,7 @@ const Categories = () => {
         Categorias
       </h3>
       {categories.map((category, index) => (
-        <Link key={category.slug} href={`/categoria/${category.slug}`}>
+        <Link key={category.slug} href={`/category/${category.slug}`}>
           <span
             className={`cursor-pointer block ${
               index === categories.length - 1 ? "border-b-0" : "border-b"
