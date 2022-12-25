@@ -19,8 +19,6 @@ const TermsOfUse = () => {
         />
 
         <meta name="robots" content="index, follow" />
-
-        <link rel="canonical" href="https://www.criptoarea.com.br/termos-de-uso" />
       </Head>
       <div className="bg-white dark:bg-secondary-dark-bg shadow-xl rounded-lg mx-10 md:mx-16  p-3 md:p-6 lg:p-10  dark:text-white">
         <h1 className="mt-2 mb-4 text-center lg:text-left text-orange-500 font-bold">

@@ -14,7 +14,6 @@ const Contact = () => {
           name="keywords"
           content="contato, Cripto Area, criptomoedas, dúvidas, informações"
         />
-        <link rel="canonical" href="https://www.example.com/contact" />
       </Head>
       <h1 className="text-2xl font-bold mt-4 mb-4 text-center lg:text-left">
         Entre em contato com o <b className="text-orange-500 ">Cripto Area</b>!
