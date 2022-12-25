@@ -1,8 +1,26 @@
+import Head from "next/head";
 import React from "react";
 
 const About = () => {
   return (
     <div className="my-10 md:my-16 ">
+      <Head>
+        <title>Sobre Criptoarea - Seu Destino Final para Tudo em Criptomoedas</title>
+
+        <meta
+          name="description"
+          content="Descubra mais sobre o Criptoarea, o principal destino para tudo em criptomoedas. Oferecemos uma ampla variedade de serviços para ajudá-lo a navegar no mundo das criptomoedas, incluindo notícias, análises, guias e muito mais."
+        />
+
+        <meta
+          name="keywords"
+          content="criptomoeda, criptomoedas, sobre, Criptoarea, recursos, comprar, vender, aprender, investir"
+        />
+
+        <meta name="robots" content="index, follow" />
+
+        <link rel="canonical" href="https://www.criptoarea.com.br/sobre" />
+      </Head>
       <div className="bg-white dark:bg-secondary-dark-bg shadow-xl rounded-lg mx-10 md:mx-16  p-3 md:p-6 lg:p-10  dark:text-white">
         <h1 className="mt-2 mb-4 text-center lg:text-left">
           Bem-vindo ao nosso site <b className="text-orange-500 "> Cripto Area</b>!

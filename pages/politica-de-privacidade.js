@@ -1,8 +1,29 @@
+import Head from "next/head";
 import React from "react";
 
 const PrivacyPolicy = () => {
   return (
     <div className="my-10 md:my-16  ">
+      <Head>
+        <title>Política de Privacidade - Criptoarea</title>
+
+        <meta
+          name="description"
+          content="Saiba mais sobre nosso compromisso com a proteção da sua privacidade e as medidas que tomamos para garantir a segurança de suas informações pessoais no Criptoarea."
+        />
+
+        <meta
+          name="keywords"
+          content="criptomoeda, criptomoedas, política de privacidade, Criptoarea, informações pessoais, segurança"
+        />
+
+        <meta name="robots" content="index, follow" />
+
+        <link
+          rel="canonical"
+          href="https://www.criptoarea.com.br/politica-de-privacidade"
+        />
+      </Head>
       <div className="bg-white dark:bg-secondary-dark-bg shadow-xl rounded-lg mx-10 md:mx-16 p-3 md:p-6 lg:p-10  dark:text-white">
         <h1 className="mt-2 mb-4 text-center lg:text-left text-orange-500 font-bold">
           Política de Privacidade

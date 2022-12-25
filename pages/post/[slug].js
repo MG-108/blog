@@ -11,6 +11,7 @@ import {
   CommentsForm,
   Loader,
 } from "../../components";
+import Head from "next/head";
 
 const PostDetails = ({ post }) => {
   const router = useRouter();
@@ -20,6 +21,14 @@ const PostDetails = ({ post }) => {
   }
   return (
     <>
+      <Head>
+        <title>{post.title}</title>
+        <meta name="description" content={post.excerpt} />
+        <link
+          rel="canonical"
+          href={`https://www.criptoarea.com/posts/${post.slug}`}
+        />
+      </Head>
       <div className="container mx-auto px-10 ">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="col-span-1 lg:col-span-8">
