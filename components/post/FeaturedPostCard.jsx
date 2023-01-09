@@ -4,7 +4,7 @@ import Image from "next/image";
 import moment from "moment";
 
 const FeaturedPostCard = ({ post }) => (
-  <div className="relative h-72">
+  <div className="mt-32 md:mt-40 relative h-72">
     <div
       className="absolute rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-72"
       style={{ backgroundImage: `url('${post.featuredImage.url}')` }}

@@ -37,7 +37,7 @@ const FeaturedPosts = () => {
   }, []);
 
   const customLeftArrow = (
-    <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-orange-500 rounded-full ">
+    <div className=" absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-orange-500 rounded-full ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-full text-white "
@@ -75,7 +75,7 @@ const FeaturedPosts = () => {
   );
 
   return (
-    <div className="mb-8">
+    <div className=" mb-8">
       <Carousel
         infinite
         customLeftArrow={customLeftArrow}

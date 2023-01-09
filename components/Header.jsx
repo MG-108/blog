@@ -11,9 +11,9 @@ const Header = () => {
   const { open, setOpen } = useStateContext();
 
   return (
-    <div className="mb-8 ">
-      <div className=" bg-orange-500 shadow-lg  w-full  px-4 md:px-8 lg:px-16  ">
-        <div className="flex items-center justify-between py-5 md:py-7 ">
+    <div className="fixed w-screen z-10">
+      <div className=" bg-orange-500 shadow-lg   px-4 md:px-8 lg:px-16   ">
+        <div className="flex items-center justify-between py-5 ">
           <div className="md:hidden">
             <button
               onClick={() => setOpen(!open)}

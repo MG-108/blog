@@ -12,7 +12,7 @@ const NavMenuSm = () => {
   }, []);
 
   return (
-    <div className="w-2/3 h-48 bg-orange-500 shadow-2xl rounded-b-lg">
+    <div className="  h-full w-[300px] bg-orange-500 shadow-2xl rounded-b-lg z-10 fixed ">
       <div className="flex flex-col ml-6">
         <div className="flex flex-col">
           {navLinks.map((link) => (
@@ -25,7 +25,7 @@ const NavMenuSm = () => {
               </Link>
             </div>
           ))}
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <Link key={category.slug} href={`/category/${category.slug}`}>
               <span className="text-lg font-semibold font-mono text-white hover:text-black duration-250 ">
                 {category.name}
