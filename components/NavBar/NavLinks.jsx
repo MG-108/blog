@@ -1,7 +1,7 @@
-import Link from "next/link";
-import React, { useEffect } from "react";
-import { useStateContext } from "../context/contextProvider";
-import { getCategories } from "../services";
+import Link from 'next/link';
+import React, { useEffect } from 'react';
+import { useStateContext } from '../../context/contextProvider';
+import { getCategories } from '../../services';
 
 const NavLinks = () => {
   const { setCategories, categories } = useStateContext();

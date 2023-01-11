@@ -1,24 +1,21 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { useStateContext } from "../context/contextProvider";
-import { NavLinks, NavMenuSm, Theme } from "./";
-import { GrClose } from "react-icons/gr";
-import { BiMenu } from "react-icons/bi";
-import logo from "../public/Logo.svg";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useStateContext } from '../../context/contextProvider';
+import { NavLinks, NavMenuSm, Theme } from '..';
+import { GrClose } from 'react-icons/gr';
+import { BiMenu } from 'react-icons/bi';
+import logo from '../../public/Logo.svg';
 
 const Header = () => {
   const { open, setOpen } = useStateContext();
 
   return (
-    <div className="fixed w-screen z-10">
+    <div className="fixed w-screen z-10 top-0">
       <div className=" bg-orange-500 shadow-lg   px-4 md:px-8 lg:px-16   ">
         <div className="flex items-center justify-between py-5 ">
           <div className="md:hidden">
-            <button
-              onClick={() => setOpen(!open)}
-              className="text-3xl cursor-pointer md:hidden"
-            >
+            <button onClick={() => setOpen(!open)} className="text-3xl cursor-pointer md:hidden">
               <span>{open ? <GrClose size={30} /> : <BiMenu size={30} />}</span>
             </button>
           </div>
