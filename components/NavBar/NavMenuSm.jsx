@@ -15,8 +15,8 @@ const NavMenuSm = () => {
 
   return (
     <div
-      className={`smooth-transition fixed h-screen top-21 z-10  w-2/3  from-white/5 to-orange-500
-         p-5 backdrop-blur-2xl  bg-gradient-to-tl ${open ? "left-0" : "-left-full"}`}
+      className={`smooth-transition fixed h-screen top-21 z-10  w-2/3  bg-gradient-to-t from-black/50 to-orange-500 backdrop-blur-2xl
+         p-5   ${open ? "left-0" : "-left-full"}`}
     >
       <div className="flex flex-col ml-6">
         <div className="flex flex-col">
