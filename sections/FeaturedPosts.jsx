@@ -30,6 +30,7 @@ const FeaturedPosts = () => {
         slidesPerView={isAboveMediumScreens ? 3 : 1}
         spaceBetween={50}
         freeMode
+        navigation
         modules={[FreeMode, Navigation]}
       >
         {dataLoaded &&
