@@ -52,7 +52,7 @@ const Header = () => {
         </div>
       </div>
       {/* MOBILE SIDEBAR MENU */}
-      <div className="md:hidden relative ">
+      <div className="md:hidden  ">
         <NavMenuSm />{" "}
       </div>
     </div>

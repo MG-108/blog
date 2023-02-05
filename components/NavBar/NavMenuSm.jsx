@@ -15,7 +15,7 @@ const NavMenuSm = () => {
 
   return (
     <div
-      className={`smooth-transition fixed h-screen top-21 z-10  w-2/3  bg-gradient-to-t from-black/50 to-orange-500 backdrop-blur-2xl
+      className={`smooth-transition fixed h-full top-21 z-10  w-2/3  bg-gradient-to-t from-black/50 to-orange-500 backdrop-blur-2xl
          p-5   ${open ? "left-0" : "-left-full"}`}
     >
       <div className="flex flex-col ml-6">
@@ -31,7 +31,7 @@ const NavMenuSm = () => {
             </div>
           ))}
           {categories.map((category) => (
-            <Link key={category.slug} href={`/category/${category.slug}`} className="mt-2">
+            <Link key={category.slug} href={`/category/${category.slug}`} className="mt-2  ">
               <span className=" font-semibold font-mono text-white hover:text-black duration-250 ">
                 {category.name}
               </span>
