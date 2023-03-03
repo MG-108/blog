@@ -24,7 +24,7 @@ const Footer = () => {
                   className="rounded-full w-16 h-16"
                 />
               </span>
-              <span className=" pl-2 cursor-pointer font-bold font-mono text-2xl md:text-4xl text-white hover:text-black transition duration-500 ease">
+              <span className=" pl-2 cursor-pointer font-bold font-mono text-2xl md:text-4xl text-white hover:text-black transition duration-300 ease">
                 Cripto Area
               </span>
             </div>
@@ -36,7 +36,7 @@ const Footer = () => {
             <div key={link.name}>
               <Link
                 href={link.link}
-                className="p-1 md:p-2 lg:px-3  text-base font-semibold font-mono text-white hover:text-black  transition duration-500 ease"
+                className="p-1 md:p-2 lg:px-3  text-base font-semibold font-mono text-white hover:text-black  transition duration-300 ease"
               >
                 {link.name}
               </Link>

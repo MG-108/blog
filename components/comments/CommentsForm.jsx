@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { submitComment } from "../../services";
 
 const CommentsForm = ({ slug }) => {
@@ -18,7 +18,8 @@ const CommentsForm = ({ slug }) => {
       name: window.localStorage.getItem("name"),
       email: window.localStorage.getItem("email"),
       storeData:
-        window.localStorage.getItem("name") || window.localStorage.getItem("email"),
+        window.localStorage.getItem("name") ||
+        window.localStorage.getItem("email"),
     };
     setFormData(initalFormData);
   }, []);
@@ -137,7 +138,7 @@ const CommentsForm = ({ slug }) => {
         <button
           type="button"
           onClick={handleCommentSubmission}
-          className="font-mono transition duration-500 ease hover:bg-indigo-900 inline-block bg-orange-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer"
+          className="font-mono transition duration-300 ease hover:bg-indigo-900 inline-block bg-orange-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer"
         >
           Poste o Comentário
         </button>

@@ -12,8 +12,6 @@ import { Stack } from "@mui/material";
 
 export default function Home({ posts }) {
   const { setTheme } = useStateContext();
-  const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 10;
 
   useEffect(() => {
     const currentThemeMode = localStorage.getItem("themeMode");
@@ -22,15 +20,6 @@ export default function Home({ posts }) {
       setTheme(currentThemeMode);
     }
   }, []);
-
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-  const paginate = (e, value) => {
-    setCurrentPage(value);
-    window.scrollTo({ top: 200, behavior: "smooth" });
-  };
 
   return (
     <section className=" container mx-auto px-10  ">
@@ -51,7 +40,7 @@ export default function Home({ posts }) {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 ">
         <div className="lg:col-span-8 col-span-1">
-          {currentPosts.map((post, index) => (
+          {posts.map((post, index) => (
             <PostCard post={post.node} key={index} />
           ))}
         </div>
@@ -63,20 +52,6 @@ export default function Home({ posts }) {
           </div>
         </div>
       </div>
-
-      <Stack mt="24px" alignItems="center">
-        {posts.length > 10 ? (
-          <Pagination
-            defaultPage={1}
-            count={Math.ceil(posts.length / postsPerPage)}
-            page={currentPage}
-            onChange={paginate}
-            size="large"
-          />
-        ) : null}
-      </Stack>
-
-      <div></div>
     </section>
   );
 }

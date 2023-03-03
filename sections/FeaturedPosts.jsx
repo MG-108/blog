@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation } from "swiper";
@@ -13,7 +13,6 @@ import { getFeaturedPosts } from "../services";
 const FeaturedPosts = () => {
   const [featuredPosts, setFeaturedPosts] = useState([]);
   const [dataLoaded, setDataLoaded] = useState(false);
-  const [carouselState, setCarouselState] = useState({});
 
   const isAboveMediumScreens = useMediaQuery("(min-width:1024px)");
 
@@ -34,9 +33,12 @@ const FeaturedPosts = () => {
         modules={[FreeMode, Navigation]}
       >
         {dataLoaded &&
-          featuredPosts.map((post, index) => (
-            <SwiperSlide key={index} style={{ width: "25%", height: "auto" }}>
-              <FeaturedPostCard key={index} post={post} />
+          featuredPosts.map((post) => (
+            <SwiperSlide
+              key={post.slug}
+              style={{ width: "25%", height: "auto" }}
+            >
+              <FeaturedPostCard post={post} />
             </SwiperSlide>
           ))}
       </Swiper>
