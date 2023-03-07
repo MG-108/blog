@@ -1,14 +1,11 @@
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { PostCard, Categories, PostWidget } from "../components";
 import { getPosts } from "../services";
 import { FeaturedPosts } from "../sections";
 
 import { useStateContext } from "../context/contextProvider";
-
-import Pagination from "@mui/material/Pagination";
-import { Stack } from "@mui/material";
 
 export default function Home({ posts }) {
   const { setTheme } = useStateContext();

@@ -1,15 +1,10 @@
-import React, { useEffect } from "react";
 import Link from "next/link";
 import { useStateContext } from "../../context/contextProvider";
-import { getCategories } from "../../services";
 
 const NavMenuSm = () => {
   const navLinks = [{ name: "Sobre", link: "/sobre" }];
 
-  const { setCategories, categories, open } = useStateContext();
-  useEffect(() => {
-    getCategories().then((newCategories) => setCategories(newCategories));
-  }, []);
+  const { categories, open } = useStateContext();
 
   return (
     <div

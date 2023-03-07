@@ -1,13 +1,8 @@
-import { useEffect } from "react";
 import Link from "next/link";
 import { useStateContext } from "../../context/contextProvider";
-import { getCategories } from "../../services";
 
 const NavLinks = () => {
-  const { setCategories, categories } = useStateContext();
-  useEffect(() => {
-    getCategories().then((newCategories) => setCategories(newCategories));
-  }, []);
+  const { categories } = useStateContext();
 
   return (
     <div className="hidden md:block lg:flex font-mono ">

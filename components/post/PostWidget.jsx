@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import moment from "moment";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,12 +9,27 @@ import { getRecentPosts, getSimilarPosts } from "../../services";
 const PostWidget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
 
-  useEffect(() => {
+  const fetchPostWidget = async (categories, slug) => {
+    let response;
     if (slug) {
-      getSimilarPosts(categories, slug).then((result) => setRelatedPosts(result));
+      response = await getSimilarPosts(categories, slug);
     } else {
-      getRecentPosts().then((result) => setRelatedPosts(result));
+      response = await getRecentPosts();
     }
+    return response;
+  };
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetchPostWidget(categories, slug);
+        setRelatedPosts(response);
+      } catch (error) {
+        // Handle the error here
+        console.error(error);
+      }
+    };
+    getData();
   }, [slug]);
 
   return (

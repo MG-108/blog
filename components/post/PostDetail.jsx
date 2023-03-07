@@ -75,9 +75,7 @@ const PostDetail = ({ post }) => {
             <img
               src={post.author.photo.url}
               alt={post.author.name}
-              height="30px"
-              width="30px"
-              className="align-middle rounded-full"
+              className="rounded-full w-9 h-9"
             />
             <p className="inline align-middle text-gray-700 dark:text-white ml-2 text-lg">
               {post.author.name}
@@ -102,7 +100,11 @@ const PostDetail = ({ post }) => {
             <span>{moment(post.createdAt).format("DD/MMM/YYYY")}</span>
           </div>
         </div>
-        <h1 className="mb-8 text-3xl font-semibold dark:text-white">{post.title}</h1>
+
+        <h1 className="mb-8 text-3xl font-semibold dark:text-white">
+          {post.title}
+        </h1>
+
         <div className="dark:text-white">
           {post.content.raw.children.map((typeObj, index) => {
             const children = typeObj.children.map((item, itemIndex) =>

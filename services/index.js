@@ -111,8 +111,6 @@ export const getSimilarPosts = async (categories, slug) => {
   return result.posts;
 };
 
-
-
 export const getCategoryPost = async (slug) => {
   const query = gql`
     query GetCategoryPost($slug: String!) {
@@ -167,11 +165,9 @@ export const getFeaturedPosts = async () => {
         slug
         createdAt
       }
-    }   
+    }
   `;
-
   const result = await request(graphqlAPI, query);
-
   return result.posts;
 };
 

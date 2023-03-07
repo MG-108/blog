@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 
 import { getCategories } from "../services";
@@ -7,8 +7,16 @@ import { useStateContext } from "../context/contextProvider";
 const Categories = () => {
   const { setCategories, categories } = useStateContext();
 
+  const fetchCategories = async () => {
+    try {
+      const response = await getCategories();
+      setCategories(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    getCategories().then((newCategories) => setCategories(newCategories));
+    fetchCategories();
   }, []);
 
   return (
