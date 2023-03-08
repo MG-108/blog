@@ -1,7 +1,7 @@
 import { useStateContext } from "../context/contextProvider";
 
 const Theme = () => {
-  const { theme, setMode, resolvedTheme } = useStateContext();
+  const { theme, setMode } = useStateContext();
 
   return (
     <div>

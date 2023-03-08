@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { memo } from "react";
 import { useStateContext } from "../../context/contextProvider";
 
 const NavMenuSm = () => {
@@ -40,4 +41,4 @@ const NavMenuSm = () => {
   );
 };
 
-export default NavMenuSm;
+export default memo(NavMenuSm);

@@ -7,7 +7,7 @@ import { FeaturedPosts } from "../sections";
 
 import { useStateContext } from "../context/contextProvider";
 
-export default function Home({ posts }) {
+function Home({ posts }) {
   const { setTheme } = useStateContext();
 
   useEffect(() => {
@@ -60,3 +60,5 @@ export async function getStaticProps() {
     props: { posts },
   };
 }
+
+export default Home;

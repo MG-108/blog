@@ -38,7 +38,10 @@ const PostWidget = ({ categories, slug }) => {
         {slug ? "Posts Relacionados" : "Posts Recentes"}
       </h3>
       {relatedPosts.map((post) => (
-        <div key={post.title} className="flex items-center w-full mb-4">
+        <div
+          key={post.title + post.createdAt}
+          className="flex items-center w-full mb-4"
+        >
           <div className="w-16 flex-none">
             <Image
               loader={grpahCMSImageLoader}

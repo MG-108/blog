@@ -1,16 +1,37 @@
+import { useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import { useStateContext } from "../../context/contextProvider";
+import logo from "../../public/Logo.svg";
 import { NavLinks, NavMenuSm, Theme } from "..";
+import { useStateContext } from "../../context/contextProvider";
 import { GrClose } from "react-icons/gr";
 import { BiMenu } from "react-icons/bi";
-import logo from "../../public/Logo.svg";
 
 const Header = () => {
   const { open, setOpen } = useStateContext();
 
   const isMobile = useMediaQuery("(max-width:640px)");
+
+  const elementLogo = useMemo(
+    () => (
+      <Link href="/">
+        <div className="flex items-center">
+          <span>
+            <Image
+              src={logo}
+              alt="logo do cripto area"
+              className="rounded-full md:w-16 md:h-16  w-12 h-12"
+            />
+          </span>
+          <span className=" pl-2 cursor-pointer font-bold font-mono text-xl md:text-4xl text-white  ">
+            Cripto Area
+          </span>
+        </div>
+      </Link>
+    ),
+    []
+  );
 
   return (
     <div className="fixed w-screen z-10 top-0 ">
@@ -28,23 +49,12 @@ const Header = () => {
                 </span>
               </button>
             </div>
-          ) : null}
+          ) : (
+            ""
+          )}
           {/* NAV LOGO AND NAME */}
 
-          <Link href="/">
-            <div className="flex items-center">
-              <span>
-                <Image
-                  src={logo}
-                  alt="logo do cripto area"
-                  className="rounded-full md:w-16 md:h-16  w-12 h-12"
-                />
-              </span>
-              <span className=" pl-2 cursor-pointer font-bold font-mono text-xl md:text-4xl text-white  ">
-                Cripto Area
-              </span>
-            </div>
-          </Link>
+          {elementLogo}
 
           {/*min-medium devices  CATEGORIES NAVLINKS */}
           {!isMobile ? <NavLinks /> : null}
@@ -57,11 +67,7 @@ const Header = () => {
         </div>
       </div>
       {/* MOBILE SIDEBAR MENU */}
-      {isMobile ? (
-        <div>
-          <NavMenuSm />
-        </div>
-      ) : null}
+      {isMobile ? <NavMenuSm /> : null}
     </div>
   );
 };
