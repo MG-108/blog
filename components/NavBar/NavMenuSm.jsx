@@ -5,7 +5,7 @@ import { useStateContext } from "../../context/contextProvider";
 const NavMenuSm = () => {
   const navLinks = [{ name: "Sobre", link: "/sobre" }];
 
-  const { categories, open } = useStateContext();
+  const { categories, open, setOpen } = useStateContext();
 
   return (
     <div
@@ -15,17 +15,18 @@ const NavMenuSm = () => {
       <div className="flex flex-col ml-6">
         <div className="flex flex-col">
           {navLinks.map((link) => (
-            <div key={link.name}>
-              <Link
-                href={link.link}
-                className=" font-bold font-mono text-white hover:text-black duration-300 "
-              >
-                {link.name}
-              </Link>
-            </div>
+            <Link
+              key={link.name}
+              onClick={() => setOpen(false)}
+              href={link.link}
+              className=" font-bold font-mono text-white hover:text-black duration-300 "
+            >
+              {link.name}
+            </Link>
           ))}
           {categories.map((category) => (
             <Link
+              onClick={() => setOpen(false)}
               key={category.slug}
               href={`/category/${category.slug}`}
               className="mt-2  "

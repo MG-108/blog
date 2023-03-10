@@ -11,7 +11,7 @@ import { BiMenu } from "react-icons/bi";
 const Header = () => {
   const { open, setOpen } = useStateContext();
 
-  const isMobile = useMediaQuery("(max-width:640px)");
+  const isMobile = useMediaQuery("(max-width:800px)");
 
   const elementLogo = useMemo(
     () => (
@@ -49,18 +49,15 @@ const Header = () => {
                 </span>
               </button>
             </div>
-          ) : (
-            ""
-          )}
-          {/* NAV LOGO AND NAME */}
+          ) : null}
 
+          {/* NAV LOGO AND NAME */}
           {elementLogo}
 
           {/*min-medium devices  CATEGORIES NAVLINKS */}
           {!isMobile ? <NavLinks /> : null}
 
           {/* THEME SELECT */}
-
           <div className="cursor-pointer ">
             <Theme />
           </div>
