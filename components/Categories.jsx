@@ -1,30 +1,31 @@
-import { useEffect } from "react";
 import Link from "next/link";
 
 import { getCategories } from "../services";
 import { useStateContext } from "../context/contextProvider";
+import { useQuery } from "@tanstack/react-query";
 
 const Categories = () => {
   const { setCategories, categories } = useStateContext();
 
-  const fetchCategories = async () => {
-    try {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["categoriesData"],
+    queryFn: async () => {
       const response = await getCategories();
+
       setCategories(response);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchCategories();
-  }, []);
+
+      return response;
+    },
+  });
+
+  if (isLoading) return <div></div>;
 
   return (
     <div className="bg-white  dark:bg-secondary-dark-bg  shadow-lg rounded-lg p-8 mb-8 pb-12">
       <h3 className="text-lg mb-8 font-semibold border-b pb-4 text-orange-500 font-mono">
         Categorias
       </h3>
-      {categories.map((category, index) => (
+      {data.map((category, index) => (
         <Link key={category.slug} href={`/category/${category.slug}`}>
           <span
             className={`cursor-pointer block ${

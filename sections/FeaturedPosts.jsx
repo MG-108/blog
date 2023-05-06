@@ -1,6 +1,6 @@
-import { useState, useEffect, memo } from "react";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { getFeaturedPosts } from "../services";
+import { useQuery } from "@tanstack/react-query";
 
 import { FreeMode, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,21 +11,18 @@ import "swiper/scss/pagination";
 import { FeaturedPostCard } from "../components";
 
 const FeaturedPosts = () => {
-  const [featuredPosts, setFeaturedPosts] = useState([]);
-
   const isAboveMediumScreens = useMediaQuery("(min-width:1024px)");
 
-  const fetchFeaturedPosts = async () => {
-    try {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["swiperData"],
+    queryFn: async () => {
       const response = await getFeaturedPosts();
-      setFeaturedPosts(response);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchFeaturedPosts();
-  }, []);
+
+      return response;
+    },
+  });
+
+  if (isLoading) return <div></div>;
 
   return (
     <div className=" mb-8">
@@ -36,7 +33,7 @@ const FeaturedPosts = () => {
         navigation
         modules={[FreeMode, Navigation]}
       >
-        {featuredPosts.map((post) => (
+        {data.map((post) => (
           <SwiperSlide
             key={post.createdAt}
             style={{ width: "25%", height: "auto" }}

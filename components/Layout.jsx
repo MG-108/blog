@@ -1,12 +1,14 @@
-import React from 'react';
-import { Header, Footer } from './';
+import React from "react";
+import { Header, Footer } from "./";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
-      {children}
-      <Footer />
+      <div className="min-h-screen">
+        <Header />
+        {children}
+        <Footer />
+      </div>
     </>
   );
 };

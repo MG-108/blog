@@ -34,38 +34,35 @@ const Header = () => {
   );
 
   return (
-    <div className="fixed w-screen z-10 top-0 ">
-      <div className=" bg-orange-500 shadow-lg   px-4 md:px-8 lg:px-16   ">
-        <div className="flex items-center justify-between py-5 ">
-          {/* MOBILE MENU BUTTON (close, open) */}
-          {isMobile ? (
-            <div>
-              <button
-                onClick={() => setOpen((prevOpen) => !prevOpen)}
-                className="text-3xl cursor-pointer "
-              >
-                <span>
-                  {open ? <GrClose size={30} /> : <BiMenu size={30} />}
-                </span>
-              </button>
-            </div>
-          ) : null}
-
-          {/* NAV LOGO AND NAME */}
-          {elementLogo}
-
-          {/*min-medium devices  CATEGORIES NAVLINKS */}
-          {!isMobile ? <NavLinks /> : null}
-
-          {/* THEME SELECT */}
-          <div className="cursor-pointer ">
-            <Theme />
+    <nav className="fixed w-full z-10">
+      <div className=" bg-orange-500 shadow-lg   px-4 md:px-8 lg:px-16 flex items-center justify-between py-5 ">
+        {/* MOBILE MENU BUTTON (close, open) */}
+        {isMobile ? (
+          <div>
+            <button
+              onClick={() => setOpen((prevOpen) => !prevOpen)}
+              className="text-3xl cursor-pointer "
+            >
+              <span>{open ? <GrClose size={30} /> : <BiMenu size={30} />}</span>
+            </button>
           </div>
+        ) : null}
+
+        {/* NAV LOGO AND NAME */}
+        {elementLogo}
+
+        {/*min-medium devices  CATEGORIES NAVLINKS */}
+        {!isMobile ? <NavLinks /> : null}
+
+        {/* THEME SELECT */}
+        <div className="cursor-pointer ">
+          <Theme />
         </div>
       </div>
+
       {/* MOBILE SIDEBAR MENU */}
       {isMobile ? <NavMenuSm /> : null}
-    </div>
+    </nav>
   );
 };
 

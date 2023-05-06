@@ -33,6 +33,7 @@ function Home({ posts }) {
 
         <meta name="robots" content="index, follow" />
       </Head>
+
       <FeaturedPosts />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 ">

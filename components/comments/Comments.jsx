@@ -1,21 +1,24 @@
-import { useEffect, useState } from "react";
 import moment from "moment";
 import parse from "html-react-parser";
 
 import { getComments } from "../../services";
+import { useQuery } from "@tanstack/react-query";
 
 const Comments = ({ slug }) => {
-  const [comments, setComments] = useState([]);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["commentsData"],
+    queryFn: async () => {
+      const response = await getComments(slug);
 
-  useEffect(() => {
-    getComments(slug).then((result) => {
-      setComments(result);
-    });
-  }, []);
+      return response;
+    },
+  });
+
+  if (isLoading) return <div></div>;
 
   return (
     <div>
-      {comments.length > 0 ? (
+      {data.length > 0 ? (
         <div className="bg-white dark:bg-secondary-dark-bg shadow-lg rounded-lg p-8 pb-12 mb-8">
           <h3 className="text-xl mb-8 font-semibold border-b pb-4 dark:text-white">
             {comments.length} Comentários
