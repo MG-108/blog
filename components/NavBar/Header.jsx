@@ -34,18 +34,16 @@ const Header = () => {
   );
 
   return (
-    <nav className="fixed w-full z-10">
+    <div className="fixed top-0 w-full  z-10">
       <div className=" bg-orange-500 shadow-lg   px-4 md:px-8 lg:px-16 flex items-center justify-between py-5 ">
         {/* MOBILE MENU BUTTON (close, open) */}
         {isMobile ? (
-          <div>
-            <button
-              onClick={() => setOpen((prevOpen) => !prevOpen)}
-              className="text-3xl cursor-pointer "
-            >
-              <span>{open ? <GrClose size={30} /> : <BiMenu size={30} />}</span>
-            </button>
-          </div>
+          <button
+            onClick={() => setOpen((prevOpen) => !prevOpen)}
+            className="text-3xl cursor-pointer "
+          >
+            <span>{open ? <GrClose size={30} /> : <BiMenu size={30} />}</span>
+          </button>
         ) : null}
 
         {/* NAV LOGO AND NAME */}
@@ -62,7 +60,7 @@ const Header = () => {
 
       {/* MOBILE SIDEBAR MENU */}
       {isMobile ? <NavMenuSm /> : null}
-    </nav>
+    </div>
   );
 };
 
